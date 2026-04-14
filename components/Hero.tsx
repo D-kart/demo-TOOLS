@@ -24,7 +24,7 @@ export default function Hero() {
             </div>
 
             {/* Big headline */}
-            <h1 className="font-serif font-black text-5xl sm:text-6xl lg:text-8xl leading-[0.9] tracking-tighter mb-6 text-[#111111]">
+            <h1 className="font-serif font-black text-4xl sm:text-5xl md:text-6xl lg:text-8xl leading-[0.9] tracking-tighter mb-6 text-[#111111]">
               你的AI<br />
               <span className="text-[#CC0000]">龙虾</span><br />
               在哪里？

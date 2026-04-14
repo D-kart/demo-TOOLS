@@ -169,7 +169,7 @@ export default function ResultsPanel({ results, onRestart }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`
-                  group inline-flex items-center justify-center gap-2 w-full py-3 font-mono text-xs uppercase tracking-widest transition-colors duration-200 min-h-[44px]
+                  group flex items-center justify-center gap-2 w-full px-4 py-3 sm:py-3 font-mono text-xs uppercase tracking-widest transition-colors duration-200 min-h-[48px] sm:min-h-[44px]
                   ${i === 0
                     ? "bg-[#CC0000] text-[#F9F9F7] hover:bg-[#F9F9F7] hover:text-[#111111]"
                     : "border-2 border-[#404040] text-[#A3A3A3] hover:border-[#F9F9F7] hover:text-[#F9F9F7]"

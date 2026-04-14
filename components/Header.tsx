@@ -12,7 +12,7 @@ export default function Header() {
       {/* Edition bar */}
       <div className="bg-[#111111] text-[#F9F9F7] px-4 py-1">
         <div className="max-w-screen-xl mx-auto flex items-center justify-between">
-          <span className="font-mono text-[10px] uppercase tracking-widest">
+          <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest truncate max-w-[60vw] sm:max-w-none">
             Vol. 1 · 2026 Edition · OpenClaw Selection Weekly
           </span>
           <span className="font-mono text-[10px] uppercase tracking-widest text-[#CC0000]">

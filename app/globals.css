@@ -77,6 +77,12 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+@media (prefers-reduced-motion: no-preference) {
+  .animate-marquee { animation-duration: 40s; }
+}
+@media (max-width: 640px) {
+  .animate-marquee { animation-duration: 20s; }
+}
 
 /* ─── Drop Cap ───────────────────────────────────── */
 .drop-cap::first-letter {
@@ -88,6 +94,11 @@ body {
   margin-right: 8px;
   margin-top: 6px;
   color: var(--ink);
+}
+@media (max-width: 640px) {
+  .drop-cap::first-letter {
+    font-size: 3rem;
+  }
 }
 
 /* ─── Progress bar ───────────────────────────────── */

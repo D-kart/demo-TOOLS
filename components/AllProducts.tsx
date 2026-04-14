@@ -30,11 +30,11 @@ export default function AllProducts() {
         </div>
 
         {/* 12-col newspaper grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border-2 border-[#111111]">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-0 border-2 border-[#111111]">
 
-          {/* Left: Product cards 8 cols */}
-          <div className="lg:col-span-8 lg:border-r-2 border-[#111111]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 divide-y-2 divide-[#111111] border-b-2 lg:border-b-0">
+          {/* Left: Product cards */}
+          <div className="xl:col-span-8 xl:border-r-2 border-[#111111]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 divide-y-2 divide-[#111111] border-b-2 xl:border-b-0">
               {PRODUCTS.map((p, i) => (
                 <div
                   key={p.id}
@@ -73,7 +73,7 @@ export default function AllProducts() {
                     </a>
                   </div>
 
-                  <p className="font-body text-xs text-[#525252] leading-relaxed mb-3">{p.description}</p>
+                  <p className="font-body text-xs text-[#525252] leading-relaxed mb-3 line-clamp-2">{p.description}</p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-1.5 mb-3">
@@ -102,7 +102,7 @@ export default function AllProducts() {
           </div>
 
           {/* Right: Sidebar 4 cols */}
-          <div className="lg:col-span-4 flex flex-col">
+          <div className="xl:col-span-4 flex flex-col">
             {/* Route breakdown */}
             <div className="border-b-2 border-[#111111] p-6">
               <div className="font-mono text-[10px] uppercase tracking-widest text-[#737373] mb-4">
