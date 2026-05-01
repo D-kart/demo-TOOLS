@@ -10,6 +10,15 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: [],
   },
+  compiler: {
+    jsc: {
+      transform: {
+        react: {
+          throwIfNamespace: false,
+        },
+      },
+    },
+  },
 }
 
 module.exports = nextConfig

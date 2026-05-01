@@ -7,7 +7,6 @@
   --ink: #111111;
   --muted: #E5E5E0;
   --accent: #CC0000;
-  --mono: 'JetBrains Mono', 'Courier New', monospace;
 }
 
 /* ─── Base Reset ─────────────────────────────────── */
@@ -18,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -25,13 +25,14 @@ body {
   color: var(--ink);
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23111111' fill-opacity='0.04' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  overflow-x: hidden;
 }
 
 /* ─── Typography ─────────────────────────────────── */
-.font-serif   { font-family: 'Playfair Display', 'Times New Roman', serif; }
-.font-body    { font-family: 'Lora', Georgia, serif; }
-.font-sans    { font-family: 'Inter', 'Helvetica Neue', sans-serif; }
-.font-mono    { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+.font-serif { font-family: 'Playfair Display', 'Times New Roman', serif; }
+.font-body  { font-family: 'Lora', Georgia, serif; }
+.font-sans  { font-family: 'Inter', 'Helvetica Neue', sans-serif; }
+.font-mono  { font-family: 'JetBrains Mono', 'Courier New', monospace; }
 
 /* ─── Newsprint Texture ──────────────────────────── */
 .newsprint-texture {
@@ -59,26 +60,23 @@ body {
   transform: translate(-2px, -2px);
 }
 
-/* ─── Sharp Corners (belt & suspenders) ─────────── */
+/* ─── Sharp Corners ─────────────────────────────── */
 .sharp-corners {
   border-radius: 0px !important;
 }
 
-/* ─── Marquee ────────────────────────────────────── */
+/* ─── Marquee ───────────────────────────────────── */
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 .animate-marquee {
   display: flex;
-  animation: marquee 28s linear infinite;
+  animation: marquee 40s linear infinite;
   width: max-content;
 }
 .animate-marquee:hover {
   animation-play-state: paused;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .animate-marquee { animation-duration: 40s; }
 }
 @media (max-width: 640px) {
   .animate-marquee { animation-duration: 20s; }
@@ -121,23 +119,25 @@ body {
   animation: slideIn 0.3s ease-out forwards;
 }
 
-/* ─── Result rank glow ───────────────────────────── */
-@keyframes rankPulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.7; }
+/* ─── Mobile scrollable table ─────────────────────── */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
-.rank-gold   { color: #B8860B; }
-.rank-silver { color: #6B7280; }
-.rank-bronze { color: #92400E; }
 
-/* ─── Ad slot ────────────────────────────────────── */
-.ad-slot {
-  border: 2px solid var(--ink);
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 4px,
-    rgba(17,17,17,0.03) 4px,
-    rgba(17,17,17,0.03) 8px
-  );
+/* ─── Safe area for notched phones ───────────────── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ─── Disable pull-to-refresh on mobile ─────────── */
+body {
+  overscroll-behavior-y: contain;
+}
+
+/* ─── Better touch feedback ──────────────────────── */
+button, a, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
 }
